@@ -1,3 +1,0 @@
-# LostNoMore requirements
-# No external Python packages are required.
-# Python 3.9+ is recommended.
