@@ -1,0 +1,49 @@
+LostNoMore SQLite Database
+===========================
+
+Database file: lostnomore.db
+
+TABLE: users
+------------
+id            INTEGER PRIMARY KEY
+name          TEXT NOT NULL
+email         TEXT UNIQUE NOT NULL
+phone         TEXT
+password_hash TEXT NOT NULL
+role          TEXT ('admin' or 'user')
+created_at    TEXT NOT NULL
+
+TABLE: reports
+--------------
+id            TEXT PRIMARY KEY
+type          TEXT ('Lost' or 'Found')
+name          TEXT NOT NULL
+email         TEXT NOT NULL
+phone         TEXT NOT NULL
+site          TEXT
+location      TEXT
+date          TEXT
+items         TEXT NOT NULL
+description   TEXT
+reward        TEXT
+image_data    TEXT
+hidden_info   INTEGER (0/1)
+timestamp     TEXT NOT NULL
+
+Indexes are provided for report type, email, site, and date.
+
+Application architecture
+------------------------
+Browser:
+    index.html + style.css + script.js
+
+Backend:
+    run.py
+
+Storage:
+    SQLite (lostnomore.db)
+
+The JavaScript uses fetch() to communicate with the Python API.
+The application no longer uses localStorage for persistent reports/users.
+A one-time compatibility migration reads old localStorage records, imports
+them into SQLite, and then removes those old browser records.
