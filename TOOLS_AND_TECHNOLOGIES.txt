@@ -1,0 +1,9 @@
+6. Tools and Technologies
+
+Programming Language: Python
+GUI Framework: Tkinter
+Database: SQLite
+Database Connector Library: sqlite3
+IDE / Editor: Visual Studio Code
+Version Control: Git and GitHub
+Other Libraries: Pillow for image handling; ReportLab for PDF reports
